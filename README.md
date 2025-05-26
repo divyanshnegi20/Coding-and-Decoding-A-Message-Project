@@ -1,2 +1,3 @@
 # Coding-and-Decoding-A-Message-Project
-This is simple Project made in pure Python in which a user can input a message and can get a modified version of coded message that can only be decoded with a set of code and also a coded message can be decoded easily with this, to read what is written in the coded message
+This is simple Project made in pure Python in which a user can input a message and can get a modified version of coded message that can only be decoded with a set of code and also a coded message can be decoded easily with this, to read what is written in the coded message.
+This codes first recieve a message and then randomly generates a set of variables to be encoded in the message in the front and in the last of the message to hide the message and then decoding part removes the randomly generated variable to decode the message and also it corrects the indexes of the message. 
