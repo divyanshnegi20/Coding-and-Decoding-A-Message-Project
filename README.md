@@ -1,3 +1,32 @@
 # Coding-and-Decoding-A-Message-Project
-This is simple Project made in pure Python in which a user can input a message and can get a modified version of coded message that can only be decoded with a set of code and also a coded message can be decoded easily with this, to read what is written in the coded message.
-This codes first recieve a message and then randomly generates a set of variables to be encoded in the message in the front and in the last of the message to hide the message and then decoding part removes the randomly generated variable to decode the message and also it corrects the indexes of the message. 
+import random
+import string
+
+def random_str(length=3):
+    return ''.join(random.sample(string.ascii_lowercase, length))
+
+message = input("enter a message : ")
+words = message.split(" ")
+choice = int(input("enter 1 for Coding the message \nAnd 0 for Decoding:  "))
+if(choice == 1):
+    r1 = random_str()
+    r2 = random_str()
+    nwords = []
+    for word in words:
+        if(len(word)>=3):
+            newstr = r1 + word[1:] + word[0] + r2
+            nwords.append(newstr)
+        else:
+            nwords.append(word[::-1])
+    print(" ".join(nwords))
+else:
+    nwords = []
+    for word in words:
+        if(len(word)>=3):
+            newstr = word[3:-3]
+            newstr = newstr[-1] + newstr[:-1]
+            nwords.append(newstr)
+        else:
+            nwords.append(word[::-1])
+    print(" ".join(nwords))
+             
